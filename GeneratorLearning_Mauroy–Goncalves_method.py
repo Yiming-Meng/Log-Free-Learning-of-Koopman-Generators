@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     K = pinv @ X_TY
     eigenvalues, eigenvectors = np.linalg.eig(K)
-    L = logm(K)
+    L = logm(K) / span
     
     weight_for_f1 = L[:,1].real.reshape(m_monomial, n_monomial).T
     weight_for_f2 = L[:,4].real.reshape(m_monomial, n_monomial).T
